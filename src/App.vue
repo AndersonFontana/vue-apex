@@ -6,12 +6,12 @@
 			</v-toolbar-title>
 			<v-spacer></v-spacer>
 			<v-text-field dark="dark"
-							append-icon="search"
-							label="Search"
-							single-line=''
-							hide-details=''
-							v-model="search"
-							></v-text-field>
+				append-icon="search"
+				label="Search"
+				single-line=''
+				hide-details=''
+				v-model="search"
+				></v-text-field>
 		</v-toolbar>
 		
 		<v-content>
@@ -23,37 +23,37 @@
 						<v-layout>
 							<v-flex xs12="xs12" md4="md4">
 								<v-text-field
-												v-model="tempItem.Name__c"
-												label="Item Name"
-												required="required"
-												></v-text-field>
+									v-model="tempItem.Name__c"
+									label="Item Name"
+									required="required"
+									></v-text-field>
 							</v-flex>
 							
 							<v-flex xs12="xs12" md4="md4">
 								<v-text-field
-												v-model="tempItem.Price__c"
-												label="Price"
-												required="required"
-												></v-text-field>
+									v-model="tempItem.Price__c"
+									label="Price"
+									required="required"
+									></v-text-field>
 							</v-flex>
 							
 							<v-flex xs12="xs12" md4="md4">
 								<v-text-field
-												v-model="tempItem.Quantity__c"
-												label="Quantity"
-												type="number"
-												required="required"
-												></v-text-field>
+									v-model="tempItem.Quantity__c"
+									label="Quantity"
+									type="number"
+									required="required"
+									></v-text-field>
 							</v-flex>
 						</v-layout>
 						
 						<v-layout>
 							<v-flex sm12="sm12">
 								<v-textarea
-											rows="1"
-											auto-grow="auto-grow"
-											v-model="tempItem.Description__c"
-											label="Description">
+									rows="1"
+									auto-grow="auto-grow"
+									v-model="tempItem.Description__c"
+									label="Description">
 								</v-textarea>
 							</v-flex>
 						</v-layout>
@@ -77,11 +77,11 @@
 			<!-- List -->
 			<template>
 				<v-data-table
-								v-bind:headers="headers"
-								v-bind:items="items"
-								v-bind:search="search"
-								class="elevation-1"
-								>
+					v-bind:headers="headers"
+					v-bind:items="items"
+					v-bind:search="search"
+					class="elevation-1"
+					>
 					<template slot="items" slot-scope="props">
 						<tr v-on:click="setItemToUpdate(props.item)">
 							<td>{{ props.item.Name__c }}</td>
