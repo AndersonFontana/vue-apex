@@ -96,7 +96,13 @@ The final structure should be something like:
                     ...
                 </v-toolbar>
                 
-                <v-content>
+                <!-- Items Tab -->
+                <v-content ...>
+                    ...
+                </v-content>
+                
+                <!-- Cases Tab -->
+                <v-content ...>
                     ...
                 </v-content>
             </v-app>
