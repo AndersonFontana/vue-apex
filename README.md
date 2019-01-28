@@ -130,12 +130,19 @@ public with sharing class VueInventoryController {
 
     @RemoteAction
     public static List<Inventory__c> getItens() {
-        List<Inventory__c> items = [SELECT Id, Name__c, Description__c, Price__c, Quantity__c FROM Inventory__c];
+        ID userId = UserInfo.getUserId();
+        List<Inventory__c> items = [SELECT Id, Name__c, Description__c, Price__c, Quantity__c FROM Inventory__c WHERE CreatedById =: userId];
         return items;
+    }
+    
+    @RemoteAction
+    public static List<Case> getCases() {
+        List<Case> cases = [SELECT Id, Subject, LastModifiedDate, Status, Description FROM Case];
+        return cases;
     }
 
     @RemoteAction
-    public static void updateOrInsertItem(String itemSerialized) {
+    public static Inventory__c updateOrInsertItem(String itemSerialized) {
         Inventory__c item = (Inventory__c)JSON.deserialize(itemSerialized, Inventory__c.class);
         try {
             upsert item;
